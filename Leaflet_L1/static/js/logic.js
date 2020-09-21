@@ -14,17 +14,11 @@ d3.json(queryURL, function(data) {
 //Colors by magnitude. the higher, the darker 
 //(color ref:https://colorbrewer2.org/#type=sequential&scheme=YlOrRd&n=5)
 function ColorsByMag (m) {
-  // if (m <= 1) {return '#c2e699'}
-  // else if (m <= 2) {return '#a1dab4'}
-  // else if (m <= 3) {return '#41b6c4'}
-  // else if (m <= 4) {return '#2c7fb8'}
-  // else {return '#253494'};
-
-if (m <= 1) {return '#c2e699'}
-else if (m <= 2) {return '#fecc5c'}
-else if (m <= 3) {return '#fd8d3c'}
-else if (m <= 4) {return '#f03b20'}
-else {return '#6f0303'};
+  if (m <= 1) {return '#c2e699'}
+  else if (m <= 2) {return '#fecc5c'}
+  else if (m <= 3) {return '#fd8d3c'}
+  else if (m <= 4) {return '#f03b20'}
+  else {return '#6f0303'};
 
 // Shortcut for IF statement  ====>   Condition ? expression_1 : expression_2
 //   return m <= 1 ? '#800026' :  
@@ -33,8 +27,6 @@ else {return '#6f0303'};
 //          m <= 4 ? '#FEB24C' :
 //                   '#FFEDA0';
 // }
-
-
 
 } 
 
@@ -69,7 +61,7 @@ function createFeatures(earthquakeData) {
 
 function createMap(earthquakes) {
 
-  // define tile layer: streetmap and darkmap layers
+  // define tile layers: streetmap, darkmap satellite layers
   var streetMap =  L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
   tileSize: 512,
